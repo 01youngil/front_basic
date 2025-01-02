@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <body style="background-color: red;"> -->
+<!-- <body background="images/snowman.png"> -->
+<body>
+    <h2>글자 styling 예제</h2>
+    <p style="background-color: red;">1.배경색 변경</p>
+    <p style="color: blue;">2.글자색 변경</p>
+    <p style="font-size: 3opx;">3.글자크기 변경</p>
+    <p style="color: green; font-size: 25px; text-align: center;">4.복합스타일링</p>
+
+    <h2>link와 이미지 삽입</h2>
+    <!-- _blank는 새탭에서 열기 -->
+    <div>
+        <!-- a태그는 줄바꿈 없는 태그 -->
+        <a href="https://naver.com" target="_blank">네이버</a>
+    </div>
+    <div>
+        <a href="https://naver.com" target="_blank">
+            <!-- alt:이미지가 깨졌을때 대체문자열 -->
+            <img src = "https://thumbnews.nateimg.co.kr/view610///news.nateimg.co.kr/orgImg/su/2023/10/16/638064_934124_2058.jpg"
+            style="border: 3px solid black;" width="350px" height="500px"alt="먼치킨고양이">
+        </a>
+    </div>
+
+    <h2>리스트(ol-순서가 있는, ul-순서가 없는 리스트)</h2>
+    <ol style="list-style-type: upper-roman;">
+        <li>아이템A</li>
+        <li>아이템B</li>
+        <li>아이템C</li>
+    </ol>
+
+    <ul style="list-style-type: square;">
+        <li>아이템A</li>
+        <li>아이템B</li>
+        <li>아이템C</li>
+    </ul>
+
+    <h2>테이블 예제</h2>
+    <table border="1" style="border-collapse: collapse;">
+        <caption>테이블명</caption>
+        <thead>
+            <tr>
+                <th>컬럼1</th>
+                <th>컬럼2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>내용1</td>
+                <td>내용2</td>
+            </tr>
+            <tr>
+                <td>내용A</td>
+                <td>내용B</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 테이블 만들기 실습 -->
+     <!-- 테이블명 : post, 컬럼 : id, title, contents, author_email -->
+    
+
+    <table border="post" style="border-collapse: collapse;">
+        <caption>post</caption>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>contents</th>
+                <th>author_email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>a</td>
+                <td>aa</td>
+                <td>aaa</td>
+                <td>aaa@aaa.com</td>
+            </tr>
+            <tr>
+                <td>b</td>
+                <td>bb</td>
+                <td>bbb</td>
+                <td>bbb@bbb.com</td>
+            </tr>
+            <tr>
+                <td>c</td>
+                <td>cc</td>
+                <td>ccc</td>
+                <td>ccc@ccc.com</td>
+            </tr>
+        </tbody>
+
+
+    </table>
+
+</body>
+</html>
