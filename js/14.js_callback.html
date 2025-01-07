@@ -27,11 +27,10 @@
         }
         function callbackFunction3(){
             // setTimeout함수는 js의 대표적인 비동기함수중 하나(+콜백함수 처리)
-            setTimeout(){
-                // setTimeout(()=>console.log("hello world"),2000);
-                console.log("hello world2");
-                console.log("hello world3");
-            }
+            // setTimeout(콜백함수, 시간(ms));
+            setTimeout(()=>console.log("hello world"),2000);
+            console.log("hello world2");
+            console.log("hello world3");
         }
     </script>
 </body>
