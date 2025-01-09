@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시판서비스</title>
+    <title>회원상세조회</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
@@ -26,33 +26,39 @@
     </nav>
 
     <div class="container">
-        <div class="page-header"><h3>게시글 목록</h3></div>
-        <div class="float-end">
-                <a href="post_register_json.html" class="btn btn-primary">글쓰기</a>
-        </div>
+        <div class="page-header"><h3>회원 상세조회</h3></div>
+        <input type="text" id="authorId">
+        <button class="btn btn-primary" onclick="serverData()">조회</button>
         <table class="table">
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>title</th>
-                </tr>
-            </thead>
-            <tbody id="bodyData">
-
-            </tbody>
+            <tr>
+                <td>id</td>
+                <td id="inputId"></td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td id="name"></td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td id="email"></td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td id="password"></td>
+            </tr>            
         </table>
     </div>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         async function serverData(){
-            const response = await axios.get(`http://ec2-43-200-244-189.ap-northeast-2.compute.amazonaws.com:8081/post/list`);
-            const posts = response.data;
-            for(let i=0; i<posts.length; i++){
-                document.getElementById("bodyData").innerHTML +=
-                `<tr><td>${posts[i].id}</td><td>${posts[i].title}</td></tr>`;
-            }
+            const authorId = document.getElementById("authorId").value;
+            const response = await axios.get('http://localhost:8081/author/detail/'+authorId);
+            document.getElementById("inputId").innerHTML=response.data.id;
+            document.getElementById("name").innerHTML=response.data.name;
+            document.getElementById("email").innerHTML=response.data.email;
+            document.getElementById("password").innerHTML=response.data.password;
         }
-        serverData();
     </script>
 </body>
 </html>
